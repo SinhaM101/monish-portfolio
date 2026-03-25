@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
+import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/#home", label: "Home" },
@@ -17,19 +16,8 @@ const navLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
   const router = useRouter();
   const pathname = usePathname();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = resolvedTheme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-  };
 
   const handleNavClick = (href: string) => {
     if (pathname !== "/") {
@@ -62,40 +50,10 @@ export function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-white transition-all duration-200 group-hover:w-full" />
               </Link>
             ))}
-            <button
-              onClick={toggleTheme}
-              className="p-3 rounded-lg bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-all duration-200 hover:scale-110 active:scale-95"
-              aria-label="Toggle theme"
-            >
-              {mounted ? (
-                resolvedTheme === "dark" ? (
-                  <Sun className="h-5 w-5 text-zinc-400" />
-                ) : (
-                  <Moon className="h-5 w-5 text-zinc-600" />
-                )
-              ) : (
-                <div className="h-5 w-5" />
-              )}
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
-            <button
-              onClick={toggleTheme}
-              className="p-3 rounded-lg bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-all duration-200 active:scale-95"
-              aria-label="Toggle theme"
-            >
-              {mounted ? (
-                resolvedTheme === "dark" ? (
-                  <Sun className="h-5 w-5 text-zinc-400" />
-                ) : (
-                  <Moon className="h-5 w-5 text-zinc-600" />
-                )
-              ) : (
-                <div className="h-5 w-5" />
-              )}
-            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-3 rounded-lg bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-all duration-200 active:scale-95"
