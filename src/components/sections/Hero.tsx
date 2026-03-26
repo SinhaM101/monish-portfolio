@@ -124,12 +124,12 @@ export function Hero() {
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative">
               <Image
-                src="/headshot.png"
+                src="/DSC02682.jpg"
                 alt="Monish Sinha"
-                width={320}
-                height={400}
+                width={1000}
+                height={1000}
                 className="rounded-2xl shadow-2xl object-cover object-top"
-                style={{ aspectRatio: "4/5" }}
+                style={{ aspectRatio: "3/2" }}
                 priority
               />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10 dark:ring-white/10" />
