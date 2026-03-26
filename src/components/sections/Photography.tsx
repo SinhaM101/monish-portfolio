@@ -34,7 +34,7 @@ export function Photography() {
                 Lenses
               </p>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4 font-serif">
               I take photos sometimes.
             </h2>
           </div>

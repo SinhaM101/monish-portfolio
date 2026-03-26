@@ -2,9 +2,7 @@ export function About() {
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-50 dark:bg-zinc-900/50">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
-          About
-        </h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4 font-serif">About</h2>
         <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl mb-4">
           I&apos;m currently pursuing a B.S. in Data Science with a minor in Fintech at Case Western Reserve University. I&apos;ll also be joining PNC as an incoming Technology Analyst Intern.
         </p>

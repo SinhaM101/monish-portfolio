@@ -99,8 +99,8 @@ function ProjectCard({ project }: { project: Project }) {
 export function Projects() {
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4 font-serif">
           Projects
         </h2>
         <p className="text-zinc-600 dark:text-zinc-400 mb-10 max-w-2xl">

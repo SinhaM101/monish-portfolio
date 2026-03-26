@@ -58,7 +58,7 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div className="order-2 lg:order-1">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight font-serif">
               Monish Sinha
             </h1>
             <p className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-400 mb-8 font-light leading-relaxed max-w-xl">
