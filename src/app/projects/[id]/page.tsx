@@ -85,7 +85,7 @@ const projects: Record<string, Project> = {
     icon: <BarChart3 className="h-8 w-8" />,
     color: "from-emerald-500 to-teal-600",
     github: "https://github.com/SinhaM101/ireland-cost-of-living",
-    demo: "https://ireland-cost-of-living.streamlit.app",
+    demo: "https://costoflivingireland.onrender.com",
   },
   "media-vector": {
     id: "media-vector",

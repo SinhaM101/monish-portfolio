@@ -34,7 +34,7 @@ const projects: Project[] = [
     description:
       "Interactive dashboard analyzing inflation trends and demographic cost-of-living burdens in Ireland.",
     technologies: ["Python", "Streamlit", "Altair", "Pandas"],
-    github: "https://sinham101-ireland-cost-of-living-vis-app-hkhoa0.streamlit.app/",
+    github: "https://costoflivingireland.onrender.com/",
     caseStudyHref: "/projects/ireland-dashboard",
   },
 ];

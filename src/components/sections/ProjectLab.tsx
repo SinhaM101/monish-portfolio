@@ -49,7 +49,7 @@ const projects: Project[] = [
     icon: <BarChart3 className="h-6 w-6" />,
     color: "from-emerald-500 to-teal-600",
     github: "https://github.com/SinhaM101/ireland-cost-of-living",
-    demo: "https://ireland-cost-of-living.streamlit.app",
+    demo: "https://costoflivingireland.onrender.com",
   },
   {
     id: "media-vector",
