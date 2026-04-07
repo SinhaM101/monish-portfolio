@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Database, BarChart3, Cpu, Sparkles } from "lucide-react";
+import { ArrowUpRight, Database, BarChart3, Cpu, Sparkles, Shield } from "lucide-react";
 
 interface Project {
   id: string;
@@ -66,6 +66,22 @@ const projects: Project[] = [
     icon: <Cpu className="h-6 w-6" />,
     color: "from-purple-500 to-pink-600",
     github: "https://github.com/SinhaM101/media-to-vector",
+  },
+  {
+    id: "decypher",
+    title: "DeCypher",
+    subtitle: "Web3 Prototype",
+    description:
+      "Translating smart contract transactions into human-readable explanations with real-time risk detection.",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Web3"],
+    highlights: [
+      "Real-time transaction decoding",
+      "Multi-chain EVM support",
+      "Risk classification system",
+    ],
+    icon: <Shield className="h-6 w-6" />,
+    color: "from-amber-500 to-orange-600",
+    demo: "https://decipher-app.vercel.app/",
   },
 ];
 

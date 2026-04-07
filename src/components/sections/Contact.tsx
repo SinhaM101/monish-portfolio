@@ -45,12 +45,12 @@ const contactLinks = [
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4 font-serif">
+    <section id="contact" className="py-16 lg:py-20 px-6 sm:px-8 lg:px-12">
+      <div className="max-w-[1200px] mx-auto">
+        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 tracking-[-0.02em]">
           Contact
         </h2>
-        <p className="text-zinc-600 dark:text-zinc-400 mb-10 max-w-2xl">
+        <p className="text-[#A1A1AA] mb-12 max-w-2xl">
           Email is best — I usually respond within a day.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -62,17 +62,17 @@ export function Contact() {
                 href={link.href}
                 target={link.href.startsWith("/") || link.href.startsWith("mailto") ? undefined : "_blank"}
                 rel={link.href.startsWith("/") || link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                className="group p-5 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                className="group p-5 bg-[#18181B] rounded-2xl border border-[#27272A] hover:border-[#3F3F46] transition-all duration-200"
               >
                 <div className="flex items-start gap-3">
-                  <div className="inline-flex items-center justify-center w-10 h-10 bg-zinc-100 dark:bg-zinc-800 rounded-lg">
-                    <Icon className="h-5 w-5 text-zinc-700 dark:text-zinc-300" />
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-[#27272A] rounded-lg">
+                    <Icon className="h-5 w-5 text-[#A1A1AA]" />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="font-semibold text-zinc-900 dark:text-white">
+                    <h3 className="font-semibold text-white tracking-[-0.01em]">
                       {link.label}
                     </h3>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400 break-words">
+                    <p className="text-sm text-[#71717A] break-words">
                       {link.value}
                     </p>
                   </div>

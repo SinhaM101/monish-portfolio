@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowUpRight, FileText } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, FileText, ExternalLink, Brain } from "lucide-react";
 
 interface Project {
   id: string;
@@ -7,17 +8,29 @@ interface Project {
   description: string;
   technologies: string[];
   github?: string;
+  demo?: string;
   caseStudyHref?: string;
 }
 
+const featuredProject = {
+  id: "ai-governance-cost-monitoring",
+  title: "AI Governance & Cost Monitoring",
+  subtitle: "Enterprise AI Infrastructure",
+  impact: "Built internal tooling to monitor Copilot adoption and attribute AI-related cloud costs across business units.",
+  technologies: ["Power BI", "Azure", "Copilot Studio", "Data Analytics"],
+  caseStudyHref: "/projects/sherwin-williams",
+};
+
 const projects: Project[] = [
   {
-    id: "ai-governance-cost-monitoring",
-    title: "AI Governance & Cost Monitoring System",
+    id: "decypher",
+    title: "DeCypher",
     description:
-      "Enterprise AI governance tooling to monitor Copilot usage and attribute AI-related cloud costs (mocked visuals; no real company data).",
-    technologies: ["Power BI", "Azure", "Data Analytics"],
-    caseStudyHref: "/projects/sherwin-williams",
+      "Browser extension concept that translates smart contract calldata into human-readable explanations with real-time risk classification and unlimited approval detection.",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Web3"],
+    github: "https://github.com/SinhaM101/decipher-web",
+    demo: "https://decipher-app.vercel.app/",
+    caseStudyHref: "/projects/decypher",
   },
   {
     id: "voting-patterns",
@@ -47,50 +60,171 @@ function GithubIcon({ className }: { className?: string }) {
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  tags: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  caseStudyUrl: string;
+}
+
+function ProjectCard({ title, description, tags, githubUrl, liveUrl, caseStudyUrl }: ProjectCardProps) {
+  const primaryStyle = "inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium bg-white text-[#0B0B0C] hover:bg-[#E5E5E5] transition-all duration-200";
+  const secondaryStyle = "inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium border border-[#27272A] text-white hover:bg-[#18181B] transition-all duration-200";
+  const tertiaryStyle = "inline-flex items-center gap-1 text-sm text-[#71717A] hover:text-white transition-all duration-200";
+  
   return (
-    <div className="group p-6 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:shadow-md hover:-translate-y-1 transition-all duration-200">
-      <h3 className="text-lg font-semibold text-zinc-900 dark:text-white mb-2">
-        {project.title}
+    <div className="group flex flex-col h-full p-6 bg-[#18181B] rounded-2xl border border-[#27272A] hover:border-[#3F3F46] transition-all duration-200">
+      <h3 className="text-lg font-semibold text-white mb-2 tracking-[-0.01em]">
+        {title}
       </h3>
-      <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-4 leading-relaxed">
-        {project.description}
+      <p className="text-[#A1A1AA] text-sm mb-4 leading-relaxed flex-grow">
+        {description}
       </p>
 
       <div className="flex flex-wrap gap-2 mb-4">
-        {project.technologies.map((tech) => (
+        {tags.map((tag) => (
           <span
-            key={tech}
-            className="px-2.5 py-1 text-xs font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-full"
+            key={tag}
+            className="px-2.5 py-1 text-xs font-medium bg-[#27272A] text-[#A1A1AA] rounded-full"
           >
-            {tech}
+            {tag}
           </span>
         ))}
       </div>
 
-      <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
-          >
-            <GithubIcon className="h-4 w-4" />
-            GitHub
-          </a>
-        )}
+      <div className="flex flex-nowrap items-center justify-between gap-3 pt-4 border-t border-[#27272A]">
+        {/* Left side: Primary + GitHub */}
+        <div className="flex items-center gap-2">
+          {/* Primary button: Live Demo if available, else Case Study */}
+          {liveUrl ? (
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={primaryStyle}
+            >
+              <ExternalLink className="h-4 w-4" />
+              Live Demo
+            </a>
+          ) : (
+            <Link href={caseStudyUrl} className={primaryStyle}>
+              <FileText className="h-4 w-4" />
+              Case Study
+            </Link>
+          )}
 
-        {project.caseStudyHref && (
-          <Link
-            href={project.caseStudyHref}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors"
-          >
-            <FileText className="h-4 w-4" />
-            Case Study
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        )}
+          {/* GitHub - Secondary button (only if exists) */}
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={secondaryStyle}
+            >
+              <GithubIcon className="h-4 w-4" />
+              GitHub
+            </a>
+          )}
+        </div>
+
+        {/* Right side: Case Study link (tertiary) */}
+        <Link href={caseStudyUrl} className={tertiaryStyle}>
+          Case Study
+          <ArrowUpRight className="h-3.5 w-3.5" />
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+function FeaturedProjectCard() {
+  return (
+    <div className="group relative overflow-hidden rounded-2xl border border-[#27272A] bg-[#18181B] hover:border-[#3F3F46] transition-all duration-300 mb-10">
+      <div className="grid md:grid-cols-2 gap-0">
+        {/* Content */}
+        <div className="p-8 md:p-10 flex flex-col justify-center">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="p-2 rounded-lg bg-[#27272A]">
+              <Brain className="h-5 w-5 text-white" />
+            </div>
+            <span className="text-sm font-medium text-[#71717A] uppercase tracking-wider">
+              {featuredProject.subtitle}
+            </span>
+          </div>
+          
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-[-0.02em]">
+            {featuredProject.title}
+          </h3>
+          
+          <p className="text-[#A1A1AA] text-base md:text-lg leading-relaxed mb-6">
+            {featuredProject.impact}
+          </p>
+          
+          <div className="flex flex-wrap gap-2 mb-6">
+            {featuredProject.technologies.map((tech) => (
+              <span
+                key={tech}
+                className="px-3 py-1 text-sm font-medium bg-[#27272A] text-[#A1A1AA] rounded-full"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+          
+          <div className="flex items-center gap-3">
+            <Link
+              href={featuredProject.caseStudyHref}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium bg-white text-[#0B0B0C] hover:bg-[#E5E5E5] transition-all duration-200"
+            >
+              <FileText className="h-4 w-4" />
+              View Case Study
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+        
+        {/* Visual */}
+        <div className="relative bg-[#0B0B0C] flex items-center justify-center p-8 min-h-[280px]">
+          <div className="relative w-full max-w-sm">
+            {/* Dashboard mockup */}
+            <div className="bg-[#18181B] rounded-xl shadow-lg p-4 border border-[#27272A]">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                <div className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                <div className="w-3 h-3 rounded-full bg-[#28c840]" />
+                <span className="ml-2 text-xs text-[#71717A]">AI Cost Dashboard</span>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="h-2 w-20 bg-[#27272A] rounded" />
+                  <div className="h-2 w-12 bg-white rounded" />
+                </div>
+                <div className="grid grid-cols-3 gap-2">
+                  <div className="h-16 bg-white rounded opacity-80" />
+                  <div className="h-12 bg-[#71717A] rounded opacity-80" />
+                  <div className="h-20 bg-[#A1A1AA] rounded opacity-80" />
+                </div>
+                <div className="flex gap-2">
+                  <div className="h-8 flex-1 bg-[#27272A] rounded" />
+                  <div className="h-8 w-16 bg-[#3F3F46] rounded" />
+                </div>
+              </div>
+            </div>
+            {/* Floating elements */}
+            <div className="absolute -top-4 -right-4 bg-[#18181B] rounded-lg shadow-md p-3 border border-[#27272A]">
+              <div className="text-xs text-[#71717A]">Monthly Cost</div>
+              <div className="text-lg font-bold text-white">$24.5K</div>
+            </div>
+            <div className="absolute -bottom-2 -left-4 bg-[#18181B] rounded-lg shadow-md p-2 px-3 border border-[#27272A]">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-[#28c840]" />
+                <span className="text-xs font-medium text-[#A1A1AA]">87% Adoption</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -98,17 +232,30 @@ function ProjectCard({ project }: { project: Project }) {
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4 font-serif">
+    <section id="projects" className="py-16 lg:py-20 px-6 sm:px-8 lg:px-12">
+      <div className="max-w-[1200px] mx-auto">
+        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 tracking-[-0.02em]">
           Projects
         </h2>
-        <p className="text-zinc-600 dark:text-zinc-400 mb-10 max-w-2xl">
+        <p className="text-[#A1A1AA] mb-12 max-w-2xl">
           Technical case studies in data science, AI systems, and data engineering.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        {/* Featured Project */}
+        <FeaturedProjectCard />
+        
+        {/* Regular Projects */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              tags={project.technologies}
+              githubUrl={project.github}
+              liveUrl={project.demo}
+              caseStudyUrl={project.caseStudyHref ?? `/projects/${project.id}`}
+            />
           ))}
         </div>
       </div>

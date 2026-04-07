@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Database, BarChart3, Cpu } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Database, BarChart3, Cpu, Shield, ExternalLink } from "lucide-react";
 
 function GithubIcon({ className }: { className?: string }) {
   return (
@@ -116,6 +116,35 @@ const projects: Record<string, Project> = {
     color: "from-purple-500 to-pink-600",
     github: "https://github.com/SinhaM101/media-to-vector",
   },
+  "decypher": {
+    id: "decypher",
+    title: "DeCypher",
+    subtitle: "Web3 Prototype",
+    description:
+      "Translating smart contract transactions into human-readable explanations with real-time risk detection.",
+    longDescription:
+      "A frontend-focused Web3 prototype that demonstrates how smart contract transactions can be translated into human-readable explanations in real time. Built with a modern web stack to create a clean, intuitive interface for blockchain interaction.",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Web3", "EVM"],
+    highlights: [
+      "Real-time transaction decoding",
+      "Multi-chain EVM support",
+      "Risk classification system",
+      "Browser-based processing",
+    ],
+    problem:
+      "Smart contract transactions are opaque to everyday users, displaying raw calldata that is difficult to interpret. High-risk behaviors like unlimited token approvals can go unnoticed, exposing users to security vulnerabilities without their awareness.",
+    approach:
+      "Implemented lightweight decoding logic for common ERC-20 functions (transfer, approve) directly in the browser. Built detection for high-risk behaviors by parsing transaction parameters and checking for maximum uint256 values. Designed support for multiple EVM-compatible networks (Ethereum, Polygon, Arbitrum) with reusable decoding logic.",
+    results: [
+      "Created interactive 'Try DeCypher' feature for real-time decoding demonstration",
+      "Implemented plain-English explanations with color-coded risk classification",
+      "Built multi-chain support leveraging shared EVM transaction structure",
+      "Delivered production-quality UI focused on security awareness and usability",
+    ],
+    icon: <Shield className="h-8 w-8" />,
+    color: "from-amber-500 to-orange-600",
+    demo: "https://decipher-app.vercel.app/",
+  },
 };
 
 export function generateStaticParams() {
@@ -165,27 +194,40 @@ export default async function ProjectPage({
         </div>
 
         {/* Links */}
-        <div className="flex flex-wrap gap-3 mb-12">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-lg text-sm font-medium hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors"
-            >
-              <GithubIcon className="h-4 w-4" />
-              View Code
-            </a>
-          )}
-          {project.demo && (
+        <div className="flex flex-nowrap items-center gap-3 mb-12">
+          {/* Primary: Live Demo if available, else GitHub */}
+          {project.demo ? (
             <a
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black rounded-lg text-sm font-medium hover:bg-neutral-200 transition-colors"
             >
-              <ArrowUpRight className="h-4 w-4" />
+              <ExternalLink className="h-4 w-4" />
               Live Demo
+            </a>
+          ) : project.github ? (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black rounded-lg text-sm font-medium hover:bg-neutral-200 transition-colors"
+            >
+              <GithubIcon className="h-4 w-4" />
+              GitHub
+            </a>
+          ) : null}
+          
+          {/* Secondary: GitHub (only if demo exists and github exists) */}
+          {project.demo && project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-600 text-neutral-300 rounded-lg text-sm font-medium hover:bg-neutral-800 transition-colors"
+            >
+              <GithubIcon className="h-4 w-4" />
+              GitHub
             </a>
           )}
         </div>

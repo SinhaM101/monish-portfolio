@@ -18,18 +18,18 @@ function LinkedinIcon({ className }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer className="bg-zinc-50 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <footer className="border-t border-[#27272A]">
+      <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="text-sm text-[#71717A]">
             © {new Date().getFullYear()} Monish Sinha. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <a
               href="https://github.com/SinhaM101"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+              className="p-2 rounded-lg text-[#71717A] hover:text-white hover:bg-[#18181B] transition-all duration-200"
               aria-label="GitHub"
             >
               <GithubIcon className="h-5 w-5" />
@@ -38,14 +38,14 @@ export function Footer() {
               href="https://linkedin.com/in/monishsinha"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+              className="p-2 rounded-lg text-[#71717A] hover:text-white hover:bg-[#18181B] transition-all duration-200"
               aria-label="LinkedIn"
             >
               <LinkedinIcon className="h-5 w-5" />
             </a>
             <a
-              href="mailto:monish@example.com"
-              className="p-2 rounded-lg text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+              href="mailto:monish9sinha@gmail.com"
+              className="p-2 rounded-lg text-[#71717A] hover:text-white hover:bg-[#18181B] transition-all duration-200"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />
