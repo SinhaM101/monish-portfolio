@@ -75,7 +75,7 @@ export function Hero() {
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md lg:max-w-lg">
               <Image
-                src="/DSC02682.jpg"
+                src="/new-headshot.png"
                 alt="Monish Sinha"
                 width={600}
                 height={400}
