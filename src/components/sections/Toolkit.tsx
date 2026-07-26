@@ -13,7 +13,7 @@ import {
   siR,
   siScikitlearn,
 } from "simple-icons/icons";
-import { BarChart3, Cloud, FileSpreadsheet, Database } from "lucide-react";
+import { BarChart3, Cloud, FileSpreadsheet, Database, Bot, Palette } from "lucide-react";
 
 interface SimpleIcon {
   path: string;
@@ -34,11 +34,23 @@ function SiIcon({ icon, className = "w-4 h-4" }: { icon: SimpleIcon; className?:
 
 const toolkitCategories = [
   {
-    category: "Programming",
+    category: "Programming & Data",
     skills: [
-      { name: "Python", icon: siPython, iconType: "si" as const, description: "ML + data pipelines" },
+      { name: "Python", icon: siPython, iconType: "si" as const, description: "Automation, ML, and backend workflows" },
+      { name: "SQL", icon: Database, iconType: "lucide" as const, description: "Data modeling and analytics queries" },
       { name: "R", icon: siR, iconType: "si" as const, description: null },
-      { name: "SQL", icon: Database, iconType: "lucide" as const, description: null },
+      { name: "TypeScript", icon: siTypescript, iconType: "si" as const, description: null },
+    ],
+  },
+  {
+    category: "AI Engineering",
+    skills: [
+      { name: "Azure AI Foundry", icon: null, iconType: null, description: "LLM workflow automation" },
+      { name: "Azure OpenAI", icon: null, iconType: null, description: null },
+      { name: "Prompt Engineering", icon: null, iconType: null, description: null },
+      { name: "LLM Application Design", icon: null, iconType: null, description: null },
+      { name: "Retrieval-Augmented Generation", icon: null, iconType: null, description: null },
+      { name: "Copilot Studio", icon: Bot, iconType: "lucide" as const, description: null },
     ],
   },
   {
@@ -47,44 +59,57 @@ const toolkitCategories = [
       { name: "Apache Spark", icon: siApachespark, iconType: "si" as const, description: "Distributed data pipelines" },
       { name: "Pandas", icon: siPandas, iconType: "si" as const, description: null },
       { name: "NumPy", icon: siNumpy, iconType: "si" as const, description: null },
+      { name: "ETL Pipelines", icon: null, iconType: null, description: null },
+      { name: "Data Pipelines", icon: null, iconType: null, description: null },
+      { name: "Tableau", icon: null, iconType: null, description: "Dashboard export and archival workflows" },
     ],
   },
   {
-    category: "Machine Learning",
+    category: "Enterprise Systems",
     skills: [
-      { name: "Scikit-learn", icon: siScikitlearn, iconType: "si" as const, description: null },
-      { name: "Logistic Regression", icon: null, iconType: null, description: null },
-      { name: "KNN", icon: null, iconType: null, description: null },
-      { name: "SVM", icon: null, iconType: null, description: null },
+      { name: "Jira REST API", icon: null, iconType: null, description: null },
+      { name: "Bitbucket API", icon: null, iconType: null, description: null },
+      { name: "ServiceNow API", icon: null, iconType: null, description: null },
+      { name: "REST APIs", icon: null, iconType: null, description: null },
+      { name: "Azure", icon: Cloud, iconType: "lucide" as const, description: "Cloud cost tracking and AI platform work" },
+      { name: "Power Automate", icon: null, iconType: null, description: null },
+      { name: "Git", icon: siGit, iconType: "si" as const, description: null },
     ],
   },
   {
     category: "Analytics & Visualization",
     skills: [
-      { name: "Power BI", icon: BarChart3, iconType: "lucide" as const, description: "Enterprise dashboards (64k+ users)" },
+      { name: "Power BI", icon: BarChart3, iconType: "lucide" as const, description: "Enterprise dashboards and adoption reporting" },
+      { name: "Tableau", icon: null, iconType: null, description: null },
       { name: "Excel", icon: FileSpreadsheet, iconType: "lucide" as const, description: null },
     ],
   },
   {
-    category: "Cloud & Systems",
+    category: "Machine Learning",
     skills: [
-      { name: "Azure", icon: Cloud, iconType: "lucide" as const, description: "AI cost tracking & tagging" },
-      { name: "Linux", icon: siLinux, iconType: "si" as const, description: null },
+      { name: "scikit-learn", icon: siScikitlearn, iconType: "si" as const, description: null },
+      { name: "Predictive Modeling", icon: null, iconType: null, description: null },
+      { name: "Classification", icon: null, iconType: null, description: null },
+      { name: "Model Evaluation", icon: null, iconType: null, description: null },
+    ],
+  },
+  {
+    category: "Web & Product",
+    skills: [
+      { name: "Next.js", icon: siNextdotjs, iconType: "si" as const, description: null },
+      { name: "React", icon: null, iconType: null, description: null },
+      { name: "TypeScript", icon: siTypescript, iconType: "si" as const, description: null },
+      { name: "Tailwind CSS", icon: siTailwindcss, iconType: "si" as const, description: null },
+      { name: "Figma", icon: Palette, iconType: "lucide" as const, description: "Report and product UI design" },
     ],
   },
   {
     category: "Developer Tools",
     skills: [
-      { name: "Git", icon: siGit, iconType: "si" as const, description: null },
       { name: "GitHub", icon: siGithub, iconType: "si" as const, description: null },
-    ],
-  },
-  {
-    category: "Web / Product",
-    skills: [
-      { name: "Next.js", icon: siNextdotjs, iconType: "si" as const, description: null },
-      { name: "TypeScript", icon: siTypescript, iconType: "si" as const, description: null },
-      { name: "Tailwind CSS", icon: siTailwindcss, iconType: "si" as const, description: null },
+      { name: "Linux", icon: siLinux, iconType: "si" as const, description: null },
+      { name: "VS Code", icon: null, iconType: null, description: null },
+      { name: "Vercel", icon: null, iconType: null, description: null },
     ],
   },
 ];

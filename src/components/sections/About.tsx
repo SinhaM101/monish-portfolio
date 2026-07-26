@@ -7,7 +7,7 @@ export function About() {
           About
         </h2>
         <p className="text-lg sm:text-xl text-[#A1A1AA] mb-12 max-w-3xl leading-relaxed">
-          Student @ Case Western Reserve University focused on machine learning, financial analytics, and AI governance.
+          Data Science student at Case Western Reserve University with a minor in Finance, focused on building AI-powered software and data infrastructure that solve real business problems.
         </p>
 
         {/* Experience & Education Cards */}
@@ -41,10 +41,13 @@ export function About() {
         {/* Description Paragraphs */}
         <div className="max-w-4xl space-y-6">
           <p className="text-base sm:text-lg text-[#71717A] leading-[1.7]">
-            I am a Junior at Case Western Reserve University studying Data Science with a minor in Fintech, focusing on machine learning and AI governance. I build data-driven systems using Python, Spark, SQL, and Power BI, with an emphasis on practical insights and scalable pipelines.
+            I’m a Data Science student at Case Western Reserve University with a minor in Finance, passionate about building AI-powered software and data infrastructure that solve real business problems.
           </p>
           <p className="text-base sm:text-lg text-[#71717A] leading-[1.7]">
-            I am based in Cleveland and Columbus and enjoy applying data science to real financial and operational problems. I am an incoming Technology Analyst Intern at PNC Financial Services and like working across the full analytics stack, from modeling to visualization.
+            Through internships at PNC Financial Services and Sherwin-Williams, I’ve developed enterprise applications, automated engineering workflows, and built data pipelines using Python, SQL, Azure AI Foundry, Power BI, and Apache Spark. My work has focused on applying AI to improve operational efficiency, from automating Change Request documentation to developing analytics that support AI governance and cloud cost management.
+          </p>
+          <p className="text-base sm:text-lg text-[#71717A] leading-[1.7]">
+            I’m particularly interested in AI engineering, data engineering, and full-stack software development, and I enjoy designing systems that transform complex data into scalable, production-ready solutions.
           </p>
         </div>
       </div>
