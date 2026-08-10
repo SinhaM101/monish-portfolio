@@ -49,7 +49,7 @@ export function Hero() {
                 View Projects
               </Link>
               <a
-                href="/Monish Sinha Resume.pdf"
+                href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-[#27272A] text-white rounded-full text-sm font-medium hover:bg-[#18181B] transition-all duration-200"

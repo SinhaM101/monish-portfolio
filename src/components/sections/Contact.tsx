@@ -39,7 +39,7 @@ const contactLinks = [
     icon: FileText,
     label: "Resume",
     value: "Download PDF",
-    href: "/Monish Sinha Resume.pdf",
+    href: "/resume.pdf",
   },
 ];
 
