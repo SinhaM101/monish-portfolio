@@ -60,6 +60,37 @@ function TableauVisual() {
   );
 }
 
+function HiveBridgeVisual() {
+  return (
+    <div className="rounded-2xl border border-[#27272A] bg-[#0F0F11] p-4 sm:p-5">
+      <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-[#71717A] mb-4">
+        <span className="h-2 w-2 rounded-full bg-cyan-400" />
+        Architecture
+      </div>
+
+      <div className="space-y-2 text-sm">
+        <div className="rounded-xl border border-[#27272A] bg-[#18181B] px-3 py-2 text-[#D4D4D8]">Legacy Hive SQL</div>
+        <div className="flex justify-center text-[#71717A]">↓</div>
+        <div className="rounded-xl border border-cyan-500/30 bg-cyan-500/10 px-3 py-2 text-cyan-200">Java 21 Engine</div>
+        <div className="flex justify-center text-[#71717A]">↓</div>
+        <div className="rounded-xl border border-[#27272A] bg-[#18181B] px-3 py-2 text-[#D4D4D8]">Azure AI Foundry</div>
+        <div className="flex justify-center text-[#71717A]">↓</div>
+        <div className="rounded-xl border border-[#27272A] bg-[#18181B] px-3 py-2 text-[#D4D4D8]">Spark SQL Conversion</div>
+        <div className="flex justify-center text-[#71717A]">↓</div>
+        <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3 py-2 text-emerald-200">Iceberg Output</div>
+
+        <div className="pt-3">
+          <div className="mb-2 flex items-center justify-center text-[#71717A] text-xs uppercase tracking-[0.18em]">Parallel capability</div>
+          <div className="flex items-center justify-center gap-2 text-[#D4D4D8]">
+            <span className="rounded-lg border border-[#27272A] bg-[#18181B] px-2 py-1">Table Lineage</span>
+            <span className="text-[#71717A]">↗</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function PNCLogo({ className }: { className?: string }) {
   return (
     <div className={`${className} flex items-center justify-center bg-white dark:bg-white rounded-lg p-2 border border-zinc-200`}>
@@ -113,6 +144,59 @@ export function Experience() {
           Enterprise internships and automation work that became real engineering systems, not just analysis work.
         </p>
         <div className="space-y-6">
+          <div className="overflow-hidden rounded-3xl border border-[#27272A] bg-gradient-to-br from-[#18181B] via-[#151519] to-[#0F0F11] p-6 md:p-8">
+            <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+              <div className="space-y-5">
+                <div className="flex items-start gap-4">
+                  <PNCLogo className="w-12 h-12 flex-shrink-0" />
+                  <div>
+                    <p className="text-sm font-medium uppercase tracking-[0.24em] text-[#71717A] mb-1">PNC Financial Services</p>
+                    <h3 className="text-xl font-semibold text-white tracking-[-0.01em]">Technology Analyst Intern</h3>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-2xl font-semibold text-white mb-1 tracking-[-0.02em]">HiveBridge</h4>
+                  <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#A1A1AA]">AI-Powered Hive-to-Iceberg Migration Engine</p>
+                  <p className="text-[#A1A1AA] leading-relaxed max-w-2xl">
+                    Built a Java 21 code conversion engine using Azure AI Foundry to migrate legacy Hive to Iceberg-compatible Spark SQL with automated table-lineage extraction, enabling over $2M in vendor cost savings.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {['Java 21', 'Azure AI Foundry', 'Spark SQL', 'Iceberg', 'Table Lineage'].map((tag) => (
+                    <span key={tag} className="rounded-full border border-[#27272A] bg-[#121216] px-3 py-1 text-sm text-[#D4D4D8]">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    { label: '$2M+', value: 'vendor savings' },
+                    { label: 'Java 21', value: 'conversion engine' },
+                    { label: 'Automated', value: 'lineage extraction' },
+                  ].map((metric) => (
+                    <div key={metric.label} className="rounded-full border border-[#27272A] bg-[#121216] px-3 py-2 text-sm text-[#E4E4E7]">
+                      <span className="font-medium text-white">{metric.label}</span>
+                      <span className="ml-2 text-[#71717A]">{metric.value}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Link
+                  href="/projects/pnc-hive-iceberg-migration"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-[#A1A1AA] transition-all duration-200"
+                >
+                  View case study
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </div>
+
+              <HiveBridgeVisual />
+            </div>
+          </div>
+
           <div className="overflow-hidden rounded-3xl border border-[#27272A] bg-gradient-to-br from-[#18181B] via-[#151519] to-[#0F0F11] p-6 md:p-8">
             <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
               <div className="space-y-5">

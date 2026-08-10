@@ -1,24 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["600", "700"],
-});
 
 export const metadata: Metadata = {
   title: "Monish Sinha | Data Science Portfolio",
@@ -38,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${spaceGrotesk.variable} scroll-smooth`}>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body className="min-h-screen bg-[#0B0B0C] text-white font-sans antialiased grid-background">
         <ThemeProvider>
           <Navbar />

@@ -84,6 +84,34 @@ const projects: Record<string, Project> = {
     icon: <Workflow className="h-8 w-8" />,
     color: "from-emerald-500 to-teal-600",
   },
+  "pnc-hive-iceberg-migration": {
+    id: "pnc-hive-iceberg-migration",
+    title: "HiveBridge",
+    subtitle: "AI-Powered Hive-to-Iceberg Migration Engine",
+    description:
+      "Built a Java 21 conversion engine using Azure AI Foundry to migrate legacy Hive SQL into Iceberg-compatible Spark SQL while automatically extracting table lineage for modernization.",
+    longDescription:
+      "This project centered on a Java 21 orchestration engine I built to modernize legacy Hive assets at scale. The engine ingested Hive SQL and metadata, analyzed dependencies, and used Azure AI Foundry as an AI-powered transformation component to generate Iceberg-compatible Spark SQL while extracting automated table lineage for downstream migration readiness.",
+    technologies: ["Java 21", "Azure AI Foundry", "Spark SQL", "Hive", "Iceberg", "Table Lineage", "Data Migration"],
+    highlights: [
+      "$2M+ vendor cost savings",
+      "Automated Hive-to-Spark conversion",
+      "Table dependency extraction",
+      "Java-led orchestration workflow",
+    ],
+    problem:
+      "Legacy Hive workloads were expensive to maintain and hard to modernize without large manual efforts. Teams needed an approach that could translate legacy SQL patterns into Iceberg-compatible Spark SQL while also preserving table lineage and dependency context for safe migration.",
+    approach:
+      "I built the Java 21 conversion engine as the center of the migration workflow. It ingested legacy Hive metadata and SQL, established migration context, and orchestrated the transformation process with Azure AI Foundry helping convert Hive logic into modern Spark SQL patterns. A parallel lineage extraction layer captured source-to-target table relationships so the migration output remained auditable and operationally usable.",
+    results: [
+      "Delivered a Java-driven migration engine for legacy Hive modernization",
+      "Generated Iceberg-compatible Spark SQL from legacy Hive logic",
+      "Automated table-lineage extraction for migration planning",
+      "Enabled more than $2M in vendor cost savings",
+    ],
+    icon: <Database className="h-8 w-8" />,
+    color: "from-cyan-500 to-indigo-600",
+  },
   "voting-patterns": {
     id: "voting-patterns",
     title: "U.S. Voting Patterns Analysis",
@@ -220,7 +248,9 @@ export default async function ProjectPage({
   }
 
   const isFlagshipCaseStudy =
-    project.id === "pnc-ai-cr-automation" || project.id === "pnc-tableau-archival";
+    project.id === "pnc-ai-cr-automation" ||
+    project.id === "pnc-tableau-archival" ||
+    project.id === "pnc-hive-iceberg-migration";
 
   const workflowSteps =
     project.id === "pnc-ai-cr-automation"
@@ -241,23 +271,41 @@ export default async function ProjectPage({
               "Deliver the completed Change Request content back into the enterprise process with minimal manual intervention.",
           },
         ]
-      : [
-          {
-            title: "Detect expiring assets",
-            description:
-              "Scan Tableau content for upcoming expiration windows and identify dashboards that need backup.",
-          },
-          {
-            title: "Export and preserve",
-            description:
-              "Export the dashboard assets and store them in Bitbucket with versioned archival structure.",
-          },
-          {
-            title: "Keep operations reliable",
-            description:
-              "Schedule and audit the workflow so backups remain consistent and easy to recover.",
-          },
-        ];
+      : project.id === "pnc-tableau-archival"
+        ? [
+            {
+              title: "Detect expiring assets",
+              description:
+                "Scan Tableau content for upcoming expiration windows and identify dashboards that need backup.",
+            },
+            {
+              title: "Export and preserve",
+              description:
+                "Export the dashboard assets and store them in Bitbucket with versioned archival structure.",
+            },
+            {
+              title: "Keep operations reliable",
+              description:
+                "Schedule and audit the workflow so backups remain consistent and easy to recover.",
+            },
+          ]
+        : [
+            {
+              title: "Ingest legacy Hive assets",
+              description:
+                "Load the existing Hive SQL, metadata, and dependency context into the Java 21 conversion engine.",
+            },
+            {
+              title: "Convert with Azure AI Foundry",
+              description:
+                "Use the Java engine to orchestrate AI-assisted modernization from Hive logic into Iceberg-compatible Spark SQL patterns.",
+            },
+            {
+              title: "Extract lineage and output",
+              description:
+                "Generate migration-ready SQL and automated table lineage so the transformation remains traceable and operationally safe.",
+            },
+          ];
 
   const caseStudyStats =
     project.id === "pnc-ai-cr-automation"
@@ -267,12 +315,19 @@ export default async function ProjectPage({
           { value: "3", label: "Plans generated" },
           { value: "1", label: "Production workflow" },
         ]
-      : [
-          { value: "90%", label: "Faster archival" },
-          { value: "2 min", label: "Per export" },
-          { value: "100%", label: "Versioned backup" },
-          { value: "24/7", label: "Scheduled reliability" },
-        ];
+      : project.id === "pnc-tableau-archival"
+        ? [
+            { value: "90%", label: "Faster archival" },
+            { value: "2 min", label: "Per export" },
+            { value: "100%", label: "Versioned backup" },
+            { value: "24/7", label: "Scheduled reliability" },
+          ]
+        : [
+            { value: "$2M+", label: "Vendor savings" },
+            { value: "Java 21", label: "Core engine" },
+            { value: "Automated", label: "Lineage extraction" },
+            { value: "Iceberg", label: "Target output" },
+          ];
 
   return (
     <div className="min-h-screen pt-24 pb-16">
@@ -354,6 +409,39 @@ export default async function ProjectPage({
                 ))}
               </div>
             </div>
+
+            {project.id === "pnc-hive-iceberg-migration" && (
+              <div className="mb-16">
+                <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6 flex items-center gap-2">
+                  <Cpu className="h-6 w-6 text-indigo-500" />
+                  Architecture overview
+                </h2>
+                <div className="overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-6 text-white shadow-2xl">
+                  <div className="grid gap-4 md:grid-cols-5 items-stretch">
+                    {[
+                      { label: "Legacy Hive SQL", accent: "bg-zinc-700" },
+                      { label: "Java 21 Engine", accent: "bg-cyan-500" },
+                      { label: "Azure AI Foundry", accent: "bg-indigo-500" },
+                      { label: "Table Lineage", accent: "bg-emerald-500" },
+                      { label: "Iceberg-Compatible Spark SQL", accent: "bg-violet-500" },
+                    ].map((node, index) => (
+                      <div key={node.label} className="relative">
+                        <div className={`rounded-2xl border border-white/10 ${node.accent} p-4 text-center text-sm font-medium shadow-lg min-h-[96px] flex items-center justify-center`}>
+                          {node.label}
+                        </div>
+                        {index < 4 && (
+                          <div className="hidden md:flex items-center justify-center text-zinc-400 text-xl py-2">→</div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-4 text-center">
+                    <p className="text-sm uppercase tracking-[0.2em] text-emerald-300">Business impact</p>
+                    <p className="mt-2 text-2xl font-bold text-emerald-200">$2M+ vendor cost savings</p>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <div className="mb-16">
               <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">Tech stack</h2>
