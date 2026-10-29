@@ -16,8 +16,8 @@ const projects: Project[] = [
     id: "decypher",
     title: "DeCypher",
     description:
-      "Browser extension concept that translates smart contract calldata into human-readable explanations with real-time risk classification and unlimited approval detection.",
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Web3"],
+      "Built a Web3 transaction analysis tool using the Etherscan API to decode smart contracts and flag unlimited ERC-20 token approvals.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Web3"],
     github: "https://github.com/SinhaM101/decipher-web",
     demo: "https://decipher-app.vercel.app/",
     caseStudyHref: "/projects/decypher",
@@ -26,19 +26,10 @@ const projects: Project[] = [
     id: "voting-patterns",
     title: "U.S. Voting Patterns Analysis",
     description:
-      "Big data analysis combining American Community Survey socioeconomic data with U.S. presidential election results to analyze correlations between economic conditions and voting behavior.",
+      "Built Spark MapReduce pipelines across 47,000+ county-year observations, 500+ variables, and 3,143 counties, achieving up to 3.5x faster processing than a single-node implementation.",
     technologies: ["Python", "Spark", "MapReduce"],
     github: "https://github.com/monishsinha/voting-patterns-analysis",
     caseStudyHref: "/projects/voting-patterns",
-  },
-  {
-    id: "ireland-dashboard",
-    title: "Ireland Cost of Living Dashboard",
-    description:
-      "Interactive dashboard analyzing inflation trends and demographic cost-of-living burdens in Ireland.",
-    technologies: ["Python", "Streamlit", "Altair", "Pandas"],
-    github: "https://costoflivingireland.onrender.com/",
-    caseStudyHref: "/projects/ireland-dashboard",
   },
 ];
 
@@ -137,7 +128,7 @@ export function Projects() {
           Projects
         </h2>
         <p className="text-[#A1A1AA] mb-12 max-w-2xl">
-          Technical case studies in data science, AI systems, and data engineering.
+          Technical projects and applied data systems spanning AI, analytics, and large-scale processing.
         </p>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">

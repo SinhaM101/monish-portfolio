@@ -26,8 +26,8 @@ const contactLinks = [
   {
     icon: LinkedinIcon,
     label: "LinkedIn",
-    value: "linkedin.com/in/monishsinha",
-    href: "https://linkedin.com/in/monishsinha",
+    value: "linkedin.com/in/monish-sinha",
+    href: "https://linkedin.com/in/monish-sinha",
   },
   {
     icon: GithubIcon,
@@ -39,7 +39,7 @@ const contactLinks = [
     icon: FileText,
     label: "Resume",
     value: "Download PDF",
-    href: "/resume.pdf",
+    href: "/Sinha.Monish.pdf?updated=20260923",
   },
 ];
 

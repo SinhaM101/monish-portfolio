@@ -35,7 +35,7 @@ export function Footer() {
               <GithubIcon className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/monishsinha"
+              href="https://linkedin.com/in/monish-sinha"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg text-[#71717A] hover:text-white hover:bg-[#18181B] transition-all duration-200"

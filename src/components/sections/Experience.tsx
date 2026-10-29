@@ -145,6 +145,45 @@ export function Experience() {
         </p>
         <div className="space-y-6">
           <div className="overflow-hidden rounded-3xl border border-[#27272A] bg-gradient-to-br from-[#18181B] via-[#151519] to-[#0F0F11] p-6 md:p-8">
+            <div className="space-y-5">
+              <div className="flex items-start gap-4">
+                <PNCLogo className="w-12 h-12 flex-shrink-0" />
+                <div className="flex-1">
+                  <p className="text-sm font-medium uppercase tracking-[0.24em] text-[#71717A] mb-1">PNC Financial Services</p>
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+                    <h3 className="text-xl font-semibold text-white tracking-[-0.01em]">Software Engineer</h3>
+                    <div className="text-sm text-[#71717A] whitespace-nowrap">June 2026 – Present</div>
+                  </div>
+                  <p className="mt-1 text-sm text-[#A1A1AA]">Part-time since fall 2026, following a full-time summer internship</p>
+                </div>
+              </div>
+
+              <ul className="space-y-3 max-w-3xl">
+                {[
+                  'Built reusable enterprise metadata discovery libraries for Oracle, Teradata, and Alation, covering metadata retrieval, schema exploration, relationship discovery, and DDL extraction.',
+                  'Built a Spring Boot REST API that exposes Oracle metadata through a canonical contract, with normalized table relationships, key constraints, and indexes.',
+                  'Built an MCP (Model Context Protocol) platform with namespace-based tooling and enterprise authentication controls, giving AI tools secure access to metadata and database services.',
+                  'Implemented database integration components (Oracle JDBC, Teradata, SQLAlchemy) with connection pooling and schema introspection.',
+                  'Working on deployment of Java microservices to OpenShift/Kubernetes with Helm charts (in progress).',
+                ].map((bullet) => (
+                  <li key={bullet} className="flex gap-3 text-[#A1A1AA] leading-relaxed">
+                    <span className="mt-[0.6em] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-cyan-400" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-2">
+                {['Java', 'Spring Boot', 'Python', 'Oracle', 'Teradata', 'Alation', 'MCP'].map((tag) => (
+                  <span key={tag} className="rounded-full border border-[#27272A] bg-[#121216] px-3 py-1 text-sm text-[#D4D4D8]">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="overflow-hidden rounded-3xl border border-[#27272A] bg-gradient-to-br from-[#18181B] via-[#151519] to-[#0F0F11] p-6 md:p-8">
             <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
@@ -157,14 +196,14 @@ export function Experience() {
 
                 <div>
                   <h4 className="text-2xl font-semibold text-white mb-1 tracking-[-0.02em]">HiveBridge</h4>
-                  <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#A1A1AA]">AI-Powered Hive-to-Iceberg Migration Engine</p>
+                  <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#A1A1AA]">AI-powered Hive-to-Iceberg migration engine</p>
                   <p className="text-[#A1A1AA] leading-relaxed max-w-2xl">
-                    Built a Java 21 code conversion engine using Azure AI Foundry to migrate legacy Hive to Iceberg-compatible Spark SQL with automated table-lineage extraction, enabling over $2M in vendor cost savings.
+                    Delivered over $2M in vendor cost savings by developing a Java 21 code conversion engine that migrated legacy Hive workloads to Iceberg-compatible Spark SQL using Azure AI Foundry.
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  {['Java 21', 'Azure AI Foundry', 'Spark SQL', 'Iceberg', 'Table Lineage'].map((tag) => (
+                  {['Java 21', 'Azure AI Foundry', 'Spark SQL', 'Apache Iceberg', 'Table Lineage'].map((tag) => (
                     <span key={tag} className="rounded-full border border-[#27272A] bg-[#121216] px-3 py-1 text-sm text-[#D4D4D8]">
                       {tag}
                     </span>
@@ -204,14 +243,14 @@ export function Experience() {
                   <PNCLogo className="w-12 h-12 flex-shrink-0" />
                   <div>
                     <p className="text-sm font-medium uppercase tracking-[0.24em] text-[#71717A] mb-1">PNC Financial Services</p>
-                    <h3 className="text-xl font-semibold text-white tracking-[-0.01em]">Technology Analyst Intern</h3>
+                    <h3 className="text-xl font-semibold text-white tracking-[-0.01em]">Full-Stack Software Engineer • Continued Part-Time</h3>
                   </div>
                 </div>
 
                 <div>
                   <h4 className="text-2xl font-semibold text-white mb-3 tracking-[-0.02em]">Enterprise AI Change Request Automation</h4>
                   <p className="text-[#A1A1AA] leading-relaxed max-w-2xl">
-                    Built an enterprise workflow that automates Change Request documentation using Jira, Bitbucket, Azure AI Foundry, and ServiceNow.
+                    Reduced CR report preparation time by over 90% (from 1+ hour to under 5 minutes) by designing an LLM-powered workflow integrating Jira, Bitbucket, and Azure AI Foundry.
                   </p>
                 </div>
 
@@ -256,14 +295,14 @@ export function Experience() {
                   <PNCLogo className="w-12 h-12 flex-shrink-0" />
                   <div>
                     <p className="text-sm font-medium uppercase tracking-[0.24em] text-[#71717A] mb-1">PNC Financial Services</p>
-                    <h3 className="text-xl font-semibold text-white tracking-[-0.01em]">Technology Analyst Intern</h3>
+                    <h3 className="text-xl font-semibold text-white tracking-[-0.01em]">Full-Stack Software Engineer • Continued Part-Time</h3>
                   </div>
                 </div>
 
                 <div>
                   <h4 className="text-2xl font-semibold text-white mb-3 tracking-[-0.02em]">Autonomous Tableau Dashboard Archival Pipeline</h4>
                   <p className="text-[#A1A1AA] leading-relaxed max-w-2xl">
-                    Built an autonomous data engineering pipeline that archives Tableau dashboards to Bitbucket before expiration and preserves version-controlled backups.
+                    Cut Tableau dashboard archival time by 90% (from 20 minutes to 2 minutes) by designing an autonomous data pipeline that archived dashboards to Bitbucket before expiration while preserving version-controlled backups.
                   </p>
                 </div>
 
@@ -315,7 +354,7 @@ export function Experience() {
                 <div>
                   <h4 className="text-2xl font-semibold text-white mb-3 tracking-[-0.02em]">GenAI Cost Forecasting Platform</h4>
                   <p className="text-[#A1A1AA] leading-relaxed max-w-2xl">
-                    Forecasted AI implementation costs and automated enterprise AI governance workflows for large-scale adoption planning.
+                    Reduced AI proposal evaluation time by 50% by building a predictive GenAI cost-modeling application using Copilot and Azure AI, while also improving AI cost-reporting accuracy through automated tagging and governance frameworks.
                   </p>
                 </div>
 
@@ -355,23 +394,22 @@ export function Experience() {
 
           <div className="p-6 bg-[#18181B] rounded-2xl border border-[#27272A]">
             <div className="flex items-start gap-4 mb-4">
-              <PaulasChoiceLogo className="w-12 h-12 flex-shrink-0" />
+              <div className="w-12 h-12 flex-shrink-0 rounded-lg border border-[#27272A] bg-[#121216] flex items-center justify-center text-[#A1A1AA] text-xs font-medium uppercase tracking-[0.18em]">
+                CWRU
+              </div>
               <div className="flex-1">
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
                   <h3 className="text-lg font-semibold text-white tracking-[-0.01em]">
-                    Unilever (Paula&apos;s Choice) — Supply Chain Intern
+                    Conduct Review Board — Board Member
                   </h3>
-                  <div className="text-sm text-[#71717A] whitespace-nowrap">Summer 2023</div>
+                  <div className="text-sm text-[#71717A] whitespace-nowrap">Nov 2024 – Present</div>
                 </div>
               </div>
             </div>
 
             <ul className="space-y-2">
               <li className="text-sm text-[#A1A1AA]">
-                Kept track of logistics and updated company&apos;s inventory
-              </li>
-              <li className="text-sm text-[#A1A1AA]">
-                Provided recommendations and led presentation on improving remote work productivity
+                Reviewed academic and conduct cases with faculty to uphold university standards.
               </li>
             </ul>
           </div>

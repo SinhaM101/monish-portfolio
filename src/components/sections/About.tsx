@@ -7,7 +7,7 @@ export function About() {
           About
         </h2>
         <p className="text-lg sm:text-xl text-[#A1A1AA] mb-12 max-w-3xl leading-relaxed">
-          Data Science student at Case Western Reserve University with a minor in Finance, focused on building AI-powered software and data infrastructure that solve real business problems.
+          Backend and platform engineer at PNC, working part-time while finishing my Data Science degree (Finance minor) at Case Western Reserve University, graduating May 2027.
         </p>
 
         {/* Experience & Education Cards */}
@@ -18,9 +18,9 @@ export function About() {
               Experience
             </h3>
             <ul className="space-y-3 text-[#A1A1AA] leading-relaxed">
-              <li>Incoming Technology Analyst Intern – PNC Financial Services</li>
-              <li>Data Science Intern – Sherwin-Williams</li>
-              <li>AI governance, cloud cost analytics, predictive modeling</li>
+              <li>Software Engineer (part-time) – PNC Financial Services</li>
+              <li>AI Governance Intern – Sherwin-Williams</li>
+              <li>AI workflows, data pipelines, enterprise automation</li>
             </ul>
           </div>
 
@@ -31,9 +31,10 @@ export function About() {
             </h3>
             <ul className="space-y-3 text-[#A1A1AA] leading-relaxed">
               <li>B.S. Data Science</li>
-              <li>Minor in Fintech</li>
-              <li>Case Western Reserve University</li>
-              <li>Expected May 2027</li>
+              <li>Finance minor</li>
+              <li>Case Western Reserve University – May 2027</li>
+              <li>GPA: 3.5/4.0</li>
+              <li>University College Dublin study abroad</li>
             </ul>
           </div>
         </div>
@@ -41,13 +42,13 @@ export function About() {
         {/* Description Paragraphs */}
         <div className="max-w-4xl space-y-6">
           <p className="text-base sm:text-lg text-[#71717A] leading-[1.7]">
-            I’m a Data Science student at Case Western Reserve University with a minor in Finance, passionate about building AI-powered software and data infrastructure that solve real business problems.
+            I’m a backend and platform engineer at PNC, working part-time while I finish my Data Science degree at Case Western Reserve University (Finance minor, May 2027). I’m passionate about building AI-powered software, data pipelines, and enterprise systems that drive measurable business value.
           </p>
           <p className="text-base sm:text-lg text-[#71717A] leading-[1.7]">
-            Through internships at PNC Financial Services and Sherwin-Williams, I’ve developed enterprise applications, automated engineering workflows, and built data pipelines using Python, SQL, Azure AI Foundry, Power BI, and Apache Spark. My work has focused on applying AI to improve operational efficiency, from automating Change Request documentation to developing analytics that support AI governance and cloud cost management.
+            At PNC, I’ve built Java 21 and AI-enabled systems that streamline migration, automation, and archival workflows, including a Hive-to-Iceberg conversion engine and a Jira/Bitbucket/AI-powered reporting pipeline that cut preparation time by over 90%. At Sherwin-Williams, I worked on AI governance and cost modeling to improve enterprise adoption planning and responsible AI practices.
           </p>
           <p className="text-base sm:text-lg text-[#71717A] leading-[1.7]">
-            I’m particularly interested in AI engineering, data engineering, and full-stack software development, and I enjoy designing systems that transform complex data into scalable, production-ready solutions.
+            I’m particularly interested in AI engineering, data engineering, and full-stack software development, and I enjoy creating systems that turn complex data into scalable, production-ready solutions.
           </p>
         </div>
       </div>

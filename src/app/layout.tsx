@@ -6,13 +6,13 @@ import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
-  title: "Monish Sinha | Data Science Portfolio",
-  description: "Data Science Student | AI Governance | Machine Learning - Portfolio showcasing projects in data science, machine learning, and AI systems.",
-  keywords: ["Data Science", "Machine Learning", "AI Governance", "Portfolio", "Monish Sinha"],
+  title: "Monish Sinha | Data Science & Software Engineering",
+  description: "Data science student and software engineer focused on full-stack engineering, AI workflows, and enterprise data systems.",
+  keywords: ["Monish Sinha", "Data Science", "Software Engineering", "AI Governance", "Full-Stack", "Portfolio"],
   authors: [{ name: "Monish Sinha" }],
   openGraph: {
-    title: "Monish Sinha | Data Science Portfolio",
-    description: "Data Science Student | AI Governance | Machine Learning",
+    title: "Monish Sinha | Data Science & Software Engineering",
+    description: "Full-stack engineering, AI workflows, and enterprise analytics portfolio.",
     type: "website",
   },
 };

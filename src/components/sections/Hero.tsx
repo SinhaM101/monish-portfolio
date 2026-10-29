@@ -18,25 +18,25 @@ export function Hero() {
               Monish Sinha
             </h1>
             <p className="text-xl sm:text-2xl text-[#A1A1AA] mb-6 font-normal tracking-[-0.01em]">
-              Data Science + Fintech @ CWRU
+              Software Engineer @ PNC • Data Science @ CWRU
             </p>
             <p className="text-base sm:text-lg text-[#71717A] mb-10 leading-relaxed max-w-lg">
-              Data science student building data-driven systems for financial and operational decision-making.
+              Backend and platform engineer at PNC, working part-time while finishing my Data Science degree at CWRU (May 2027). I build metadata services, database integrations, and AI tooling for enterprise systems.
             </p>
 
             {/* Metrics row */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10 max-w-xl">
               <div>
                 <div className="text-2xl font-semibold text-white">3</div>
-                <div className="text-sm text-[#71717A]">internships at enterprise companies</div>
+                <div className="text-sm text-[#71717A]">enterprise roles and internships</div>
               </div>
               <div>
-                <div className="text-2xl font-semibold text-white">64,000+</div>
-                <div className="text-sm text-[#71717A]">users impacted by AI tools</div>
+                <div className="text-2xl font-semibold text-white">$2M+</div>
+                <div className="text-sm text-[#71717A]">vendor savings delivered</div>
               </div>
               <div>
-                <div className="text-sm font-mono text-[#A1A1AA] font-medium">Python • Spark</div>
-                <div className="text-sm font-mono text-[#A1A1AA] font-medium">SQL • Azure</div>
+                <div className="text-sm font-mono text-[#A1A1AA] font-medium">Java • Python</div>
+                <div className="text-sm font-mono text-[#A1A1AA] font-medium">Spark • Azure AI</div>
               </div>
             </div>
 
@@ -49,7 +49,7 @@ export function Hero() {
                 View Projects
               </Link>
               <a
-                href="/resume.pdf"
+                href="/Sinha.Monish.pdf?updated=20260923"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-[#27272A] text-white rounded-full text-sm font-medium hover:bg-[#18181B] transition-all duration-200"
