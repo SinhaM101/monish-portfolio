@@ -162,7 +162,7 @@ export function Experience() {
                 {[
                   'Built reusable enterprise metadata discovery libraries for Oracle, Teradata, and Alation, covering metadata retrieval, schema exploration, relationship discovery, and DDL extraction.',
                   'Built a Spring Boot REST API that exposes Oracle metadata through a canonical contract, with normalized table relationships, key constraints, and indexes.',
-                  'Built an MCP (Model Context Protocol) platform with namespace-based tooling and enterprise authentication controls, giving AI tools secure access to metadata and database services.',
+                  'Built an MCP (Model Context Protocol) server with FastMCP that connects all databases to AI agents, with namespace-based tooling and enterprise authentication controls.',
                   'Implemented database integration components (Oracle JDBC, Teradata, SQLAlchemy) with connection pooling and schema introspection.',
                   'Working on deployment of Java microservices to OpenShift/Kubernetes with Helm charts (in progress).',
                 ].map((bullet) => (
@@ -174,7 +174,7 @@ export function Experience() {
               </ul>
 
               <div className="flex flex-wrap gap-2">
-                {['Java', 'Spring Boot', 'Python', 'Oracle', 'Teradata', 'Alation', 'MCP'].map((tag) => (
+                {['Java', 'Spring Boot', 'Python', 'Oracle', 'Teradata', 'Alation', 'MCP', 'FastMCP'].map((tag) => (
                   <span key={tag} className="rounded-full border border-[#27272A] bg-[#121216] px-3 py-1 text-sm text-[#D4D4D8]">
                     {tag}
                   </span>
